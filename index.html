@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Otomanopee+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url("./images/restaurant.jpg");
+            font-family: 'Otomanopee One', sans-serif;
+            color: rgb(216, 160, 6);
+        }
+        
+        header {
+            height: 170px;
+            margin-left: 50px;
+            font-size: 110px;
+            font-family: 'Otomanopee One', sans-serif;
+        }
+        
+        #text {
+            font-size: 40px;
+            margin-top: 10px;
+            font-family: 'Otomanopee One', sans-serif;
+        }
+        
+        section {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+        }
+        
+        #infoTab {
+            display: flex;
+            flex-direction: column;
+            justify-content: right;
+            margin-left: 90px;
+        }
+        
+        #divTabsItem {
+            display: flex;
+            flex-direction: row;
+            justify-content: right;
+            height: 50px;
+        }
+        
+        .tabsItem {
+            width: 120px;
+            text-align: center;
+            padding-top: 10px;
+            border: 1px solid gray;
+            background: radial-gradient(circle, rgba(255, 249, 133, 0.11808473389355745) 0%, rgba(247, 241, 9, 0.2861519607843137) 100%);
+            font-family: 'Otomanopee One', sans-serif;
+        }
+        
+        #ingredientsList {
+            display: flex;
+            flex-direction: rows;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            font-size: 35px;
+        }
+        
+        #ingredients {
+            height: 350px;
+            width: 200px;
+        }
+        
+        #price {
+            display: flex;
+            flex-direction: column;
+            height: 350px;
+            width: 70px;
+            font-size: 35px;
+        }
+        
+        .price {
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+        
+        #board {
+            display: flex;
+            position: relative;
+            height: 570px;
+            width: 570px;
+            border-radius: 30px;
+            margin-top: -30px;
+            margin-right: 60px;
+            background: rgb(255, 249, 133);
+            background: radial-gradient(circle, rgba(255, 249, 133, 0.11808473389355745) 0%, rgba(247, 241, 9, 0.2861519607843137) 100%);
+        }
+        
+        .boardItems {
+            position: absolute;
+            margin-left: -5px;
+        }
+        
+        #buttonType {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 300px;
+            width: 120px;
+            margin-left: 20px;
+            margin-top: 40px;
+        }
+        
+        #buttonType>input {
+            display: flex;
+            justify-content: center;
+            height: 70px;
+            font-size: 20px;
+            border-radius: 10px;
+            background: rgb(5, 241, 37);
+        }
+        
+        #buttonType>#buttonReset {
+            background: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <header>GOOD FOOD</header>
+    <section>
+        <div id="infoTab">
+            <div id="divTabsItem">
+                <a href="./NeedForJs-master/index.html" class="tabsItem">NeedForJs</a>
+                <a href="https://www.kfc-ukraine.com/" class="tabsItem">Menu</a>
+                <a href="https://likarni.com/doctors/rovno/gastroenterologija" class="tabsItem">Contacts</a>
+            </div>
+            <div id="text">Collect your MEGA burger!</div>
+            <form id="ingredientsList">
+                <fieldset id="ingredients">
+                    <legend>Ingredients:</legend>
+                    <input type="checkbox" class="ingList" value="ketchup" onclick="listCheck()">ketchup<br>
+                    <input type="checkbox" class="ingList" value="cheese" onclick="listCheck()">cheese<br>
+                    <input type="checkbox" class="ingList" value="tomato" onclick="listCheck()">tomato<br>
+                    <input type="checkbox" class="ingList" value="salad" onclick="listCheck()">salad<br>
+                    <input type="checkbox" class="ingList" value="onion" onclick="listCheck()">onion<br>
+                    <input type="checkbox" class="ingList" value="cutlet" onclick="listCheck()">cutlet
+                </fieldset>
+                <fieldset id="price">
+                    <legend>Price:</legend>
+                    <p class="price" value="1">1 $</p>
+                    <p class="price" value="2">2 $</p>
+                    <p class="price" value="1">1 $</p>
+                    <p class="price" value="1">1 $</p>
+                    <p class="price" value="1">1 $</p>
+                    <p class="price" value="3">3 $</p>
+                </fieldset>
+                <div id="buttonType">
+                    <input id="conto" type="button" value="Collect" onclick="buttonC()">
+                    <input id="buttonReset" type="button" value="Reset" onclick="buttonR()">
+            </form>
+            </div>
+        </div>
+
+        <div id="board"><img src="./images/burger.png" alt="burger" id="boardImage">
+            <div class="boardItems" id="burg1"><img src="./images/burger-top.png" alt="burger-up"></div>
+            <div class="boardItems" id="burg2"><img src="./images/ketchup.png" alt="ketchup"></div>
+            <div class="boardItems" id="burg3"><img src="./images/cheese.png" alt="cheese"></div>
+            <div class="boardItems" id="burg4"><img src="./images/tomato.png" alt="tomato"></div>
+            <div class="boardItems" id="burg5"><img src="./images/salad.png" alt="salad"></div>
+            <div class="boardItems" id="burg6"><img src="./images/onion.png" alt="onion"></div>
+            <div class="boardItems" id="burg7"><img src="./images/cuttlet.png" alt="cutlet"></div>
+            <div class="boardItems" id="burg8"><img src="./images/burger-bottom.png" alt="burger-bottom"></div>
+        </div>
+
+    </section>
+
+    <script>
+        let board = document.querySelectorAll(".boardItems");
+        let divBoard = document.getElementById("board");
+        let listCheckbox = document.querySelectorAll("input[value]");
+        var ingL = document.querySelectorAll(".ingList");
+        let boardImage = document.getElementById("boardImage");
+        let conto = document.getElementById("conto");
+        let flag = 0;
+
+
+
+        setInterval(function() {
+            if (flag == 0) {
+                document.body.style.background = "url(./images/restaurant1.png)"
+                flag = 1;
+            } else {
+                document.body.style.background = "url(./images/restaurant.jpg)"
+                flag = 0;
+            }
+        }, 10000);
+
+        function boardItems() {
+            for (var i = 0; i < board.length; i++) {
+                board[i].hidden = true;
+            };
+            boardImage.hidden = true;
+        }
+        boardItems();
+
+        var arrIngredients = ["ketchup", "cheese", "tomato", "salad", "onion", "cutlet"];
+        let priceCollection = [1, 2, 1, 1, 1, 3];
+        var priceCollect = 0;
+        let arrBoard = [50, 100, 150, 200, 250, 300, 350];
+        var q = 0;
+
+        function listCheck() {
+            board[0].hidden = false;
+            board[0].style.bottom = 100 + "px";
+            board[0].style.zIndex = 10;
+            board[7].hidden = false;
+            board[7].style.bottom = 0;
+            board[7].style.zIndex = -1;
+            for (var i = 0; i < listCheckbox.length; i++) {
+                if (event.currentTarget.value == arrIngredients[i]) {
+                    board[i + 1].style.zIndex = q;
+                    board[i + 1].hidden = false;
+                    board[i + 1].style.bottom = arrBoard[q] + "px";
+                    priceCollect += parseInt(priceCollection[i]);
+                    board[0].style.bottom = arrBoard[q] + 50 + "px";
+                    q++;
+                };
+            };
+            for (var i = 0; i < listCheckbox.length; i++) {
+                if (event.currentTarget.checked == false && event.currentTarget.value == arrIngredients[i]) {
+                    priceCollect -= parseInt(priceCollection[i]);
+                    board[i + 1].hidden = true;
+                };
+            };
+            conto.value = priceCollect + " $";
+        };
+
+        function buttonC() {
+            for (var i = 0; i < board.length; i++) {
+                board[i].hidden = true;
+                boardImage.hidden = false;
+                priceCollect = 0;
+                conto.value = 0;
+            };
+        };
+
+        function buttonR() {
+            priceCollect = 0;
+            conto.value = 0;
+            q = 0;
+            for (var i = 0; i < ingL.length; i++) {
+                if (ingL[i].checked == true) {
+                    ingL[i].checked = false;
+                };
+            };
+            for (var i = 0; i < board.length; i++) {
+                board[i].hidden = true;
+                boardImage.hidden = false;
+            }
+            boardImage.hidden = true;
+            conto.value = "Collect";
+        }
+    </script>
+</body>
+
+</html>
